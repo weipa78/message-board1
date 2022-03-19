@@ -16,7 +16,6 @@ class MessagesController extends Controller
     public function index()
     {
         $messages = Message::all();
-//         dd($messages);
         return view('messages.index', [
             'messages' => $messages,
         ]);
