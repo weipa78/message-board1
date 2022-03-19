@@ -11,7 +11,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($messages as $message)
+				@foreach ($messages as $message)
 				<tr>
 					<td>{!! link_to('messages.show', $message->id, ['id' => $message->id]) !!}</td>
 					<td>{{ $message->content }}</td>
