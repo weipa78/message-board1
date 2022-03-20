@@ -23,22 +23,22 @@ Route::get('/', 'App\Http\Controllers\MessagesController@index');
 // });
 
 // メッセージ個別詳細ページ表示
-Route::get('messages/{id?}', 'App\Http\Controllers\MessagesController@show');
+Route::get('messages/{id?}', 'App\Http\Controllers\MessagesController@show')->name('messages.show');
 
 //メッセージの新規登録処理（新規登録画面は表示しない）
-Route::post('messages', 'App\Http\Controllers\MessagesController@store');
+Route::post('messages', 'App\Http\Controllers\MessagesController@store')->name('messages.store');
 
 // メッセージの更新処理（編集画面は表示しない）
-Route::put('messages/{id}', 'App\Http\Controllers\MessagesController@update');
+Route::put('messages/{id}', 'App\Http\Controllers\MessagesController@update')->name('messages.update');
 
 // メッセージの削除処理
-Route::delete('messages/{id}', 'App\Http\Controllers\MessagesController@destroy');
+Route::delete('messages/{id}', 'App\Http\Controllers\MessagesController@destroy')->name('messages.destroy');
 
 //一覧画面表示
-Route::get('/', 'App\Http\Controllers\MessagesController@index')->name('messages.index');
+// Route::get('/', 'App\Http\Controllers\MessagesController@index')->name('messages.index');
 
 // 新規登録画面表示（フォーム）
-Route::get('messages/create', 'App\Http\Controllers\MessagesController@create')->name('messages.create');
+Route::get('messages.create', 'App\Http\Controllers\MessagesController@create')->name('messages.create');
 
 // 更新登録画面表示（フォーム）
 Route::get('messages/{id}/edit', 'App\Http\Controllers\MessagesController@edit')->name('messages.edit');
