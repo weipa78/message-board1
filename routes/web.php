@@ -23,7 +23,7 @@ Route::get('/', 'App\Http\Controllers\MessagesController@index');
 // });
 
 // メッセージ個別詳細ページ表示
-Route::post('messages.show/{id?}', 'App\Http\Controllers\MessagesController@show');
+Route::get('messages/{id?}', 'App\Http\Controllers\MessagesController@show');
 
 //メッセージの新規登録処理（新規登録画面は表示しない）
 Route::post('messages', 'App\Http\Controllers\MessagesController@store');
