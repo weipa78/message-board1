@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\MessagesController@index');
 
-// Route::resource('messages', 'App\Http\Controllers\MessagesController');
+// Route::resource('message', 'App\Http\Controllers\MessagesController');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Route::get('/', 'App\Http\Controllers\MessagesController@index');
 // });
 
 // メッセージ個別詳細ページ表示
-Route::get('messages.show/{id}', 'App\Http\Controllers\MessagesController@show');
+Route::post('messages.show/{id?}', 'App\Http\Controllers\MessagesController@show');
 
 //メッセージの新規登録処理（新規登録画面は表示しない）
 Route::post('messages', 'App\Http\Controllers\MessagesController@store');
@@ -35,7 +35,7 @@ Route::put('messages/{id}', 'App\Http\Controllers\MessagesController@update');
 Route::delete('messages/{id}', 'App\Http\Controllers\MessagesController@destroy');
 
 //一覧画面表示
-// Route::get('/', 'App\Http\Controllers\MessagesController@index')->name('messages.index');
+Route::get('/', 'App\Http\Controllers\MessagesController@index')->name('messages.index');
 
 // 新規登録画面表示（フォーム）
 Route::get('messages/create', 'App\Http\Controllers\MessagesController@create')->name('messages.create');
